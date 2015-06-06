@@ -10,4 +10,8 @@
 
 @interface GNWebViewController : AppViewController
 
+- (instancetype)initWithURL:(NSString *)urlString;
+
+@property (nonatomic, copy)NSString *urlString;
+
 @end

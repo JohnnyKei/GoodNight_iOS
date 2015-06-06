@@ -30,6 +30,7 @@
 		F3A9B1F91B234BE300C13081 /* GNWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1F81B234BE300C13081 /* GNWebViewController.m */; };
 		F3A9B1FC1B234C2200C13081 /* GNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1FB1B234C2200C13081 /* GNLoginViewController.m */; };
 		F3A9B1FF1B235D5200C13081 /* GNWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1FE1B235D5200C13081 /* GNWaitingViewController.m */; };
+		F3A9B20B1B2384F700C13081 /* GNDetailHotel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B20A1B2384F700C13081 /* GNDetailHotel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		F3A9B1FB1B234C2200C13081 /* GNLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNLoginViewController.m; path = Classes/ViewControllers/GNLoginViewController.m; sourceTree = "<group>"; };
 		F3A9B1FD1B235D5200C13081 /* GNWaitingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNWaitingViewController.h; path = Classes/ViewControllers/GNWaitingViewController.h; sourceTree = "<group>"; };
 		F3A9B1FE1B235D5200C13081 /* GNWaitingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNWaitingViewController.m; path = Classes/ViewControllers/GNWaitingViewController.m; sourceTree = "<group>"; };
+		F3A9B2091B2384F700C13081 /* GNDetailHotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNDetailHotel.h; path = Classes/Models/GNDetailHotel.h; sourceTree = "<group>"; };
+		F3A9B20A1B2384F700C13081 /* GNDetailHotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNDetailHotel.m; path = Classes/Models/GNDetailHotel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +254,8 @@
 				F3A9B1C41B22E87000C13081 /* GNApiMnager.m */,
 				F3A9B1DC1B22F2A900C13081 /* GNHotel.h */,
 				F3A9B1DD1B22F2A900C13081 /* GNHotel.m */,
+				F3A9B2091B2384F700C13081 /* GNDetailHotel.h */,
+				F3A9B20A1B2384F700C13081 /* GNDetailHotel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -413,6 +418,7 @@
 				F3A9B1C21B22E80B00C13081 /* ViewController.m in Sources */,
 				F3A9B1D81B22F05500C13081 /* GNSegmentViewController.m in Sources */,
 				F3A9B1BF1B22E7E500C13081 /* AppDelegate.m in Sources */,
+				F3A9B20B1B2384F700C13081 /* GNDetailHotel.m in Sources */,
 				F3A9B1E71B23011D00C13081 /* GNMenuViewController.m in Sources */,
 				F375DB961B22DDF0001DBE58 /* main.m in Sources */,
 				F3A9B1CF1B22EEB800C13081 /* GNHotelListViewController.m in Sources */,

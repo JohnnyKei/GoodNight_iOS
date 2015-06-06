@@ -9,6 +9,8 @@
 #import "GNMapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import <CoreLocation/CoreLocation.h>
+#import "GNApiMnager.h"
+#import "GNHotel.h"
 
 @interface GNMapViewController ()<CLLocationManagerDelegate>
 
@@ -16,6 +18,8 @@
 
 @property (nonatomic, strong)CLLocationManager *locationManager;
 @property (nonatomic, strong)CLLocation *currentLocation;
+@property (nonatomic, strong)UIButton *currentButton;
+@property (nonatomic, strong)NSMutableArray *hotelList;
 
 @end
 
@@ -25,28 +29,42 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:35.6668525
-                                                            longitude:139.692626
-                                                                 zoom:10];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:35.6773896
+                                                            longitude:139.7217769
+                                                                 zoom:14];
     _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     _mapView.myLocationEnabled = YES;
     self.view = _mapView;
     self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    self.view.autoresizesSubviews = YES;
     // Creates a marker in the center of the map.
-//    GMSMarker *marker = [[GMSMarker alloc] init];
-//    marker.position = CLLocationCoordinate2DMake(35.6668525, 139.692626);
-//    marker.title = @"Shibuya";
-//    marker.snippet = @"Tokyo";
-//    marker.map = _mapView;
+
+    
+    _hotelList = [NSMutableArray array];
     
     
-    
+    _currentButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _currentButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin |UIViewAutoresizingFlexibleTopMargin;
+    [_currentButton setBackgroundColor:[UIColor whiteColor]];
+    [_currentButton setFrame:CGRectMake(_mapView.frame.size.width - 50 -10, _mapView.frame.size.height - 50 -10, 50, 50)];
+//    [_currentButton setFrame:CGRectMake(0, 0, 60, 60)];
+    [_currentButton.layer setCornerRadius:50/2];
+    [_currentButton.layer setShadowOpacity:0.8];
+    [_currentButton.layer setShadowPath:[UIBezierPath bezierPathWithOvalInRect:_currentButton.bounds].CGPath];
+    [_currentButton.layer setShadowRadius:3];
+    [_currentButton.layer setShadowOffset:CGSizeMake(2, 2)];
+    [_currentButton setImage:[UIImage imageNamed:@"ic_place_small"] forState:UIControlStateNormal];
+    [_currentButton addTarget:self action:@selector(currentButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_currentButton];
     
     
     
     [self initLocationManager];
     
     [self start];
+    
+    
+    [self callApi];
 }
 
 
@@ -55,6 +73,10 @@
     _locationManager.delegate = self;
     _locationManager.distanceFilter = kCLDistanceFilterNone;
     _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+}
+
+- (void)currentButtonTapped:(id)sender{
+    [self start];
 }
 
 - (void)start{
@@ -125,16 +147,44 @@
 - (void)setCurrentLocation:(CLLocation *)currentLocation{
     _currentLocation = currentLocation;
     
-    double latitude = currentLocation.coordinate.latitude + 0.00010696 * currentLocation.coordinate.latitude - 0.000017467 * currentLocation.coordinate.longitude - 0.0046020;
-    double longitude = currentLocation.coordinate.longitude + 0.000046047 * currentLocation.coordinate.latitude + 0.000083049 * currentLocation.coordinate.longitude - 0.010041;
-    
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:currentLocation.coordinate.latitude
                                                             longitude:currentLocation.coordinate.longitude
-                                                                 zoom:12];
+                                                                 zoom:14];
     [_mapView moveCamera:[GMSCameraUpdate setCamera:camera]];
     
     
-    
 }
+
+
+
+- (void)callApi{
+    [SVProgressHUD show];
+    __weak typeof(self) weakself = self;
+    [weakself.hotelList removeAllObjects];
+    
+    [[GNApiMnager sharedManager] getRequest:@"https://goodnight.herokuapp.com/hotels.json" params:nil success:^(id responseObject) {
+        DLog(@"res:%@",responseObject);
+        NSArray *response = (NSArray *)responseObject;
+        for (NSDictionary *dic in response) {
+            GNHotel *hotel = [[GNHotel alloc]initWithDictionary:dic];
+            [weakself.hotelList addObject:hotel];
+        }
+        [SVProgressHUD dismiss];
+        [weakself reloadPins];
+    } failure:^(NSError *error) {
+        [SVProgressHUD dismiss];
+    }];
+}
+
+
+- (void)reloadPins{
+    for (GNHotel *hotel in _hotelList) {
+        GMSMarker *marker = [[GMSMarker alloc] init];
+        marker.position = CLLocationCoordinate2DMake(hotel.latitude, hotel.longitude);
+        marker.title = hotel.name;
+        marker.map = _mapView;
+    }
+}
+
 
 @end

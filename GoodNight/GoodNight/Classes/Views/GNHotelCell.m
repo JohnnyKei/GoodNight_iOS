@@ -18,8 +18,8 @@
 @end
 
 
-const CGFloat kCardHeightMargin = 5.0;
-const CGFloat kCardWidthMargin = 10.0;
+const CGFloat kCardHeightMargin = 3.0;
+const CGFloat kCardWidthMargin = 6.0;
 
 @implementation GNHotelCell
 
@@ -54,6 +54,9 @@ const CGFloat kCardWidthMargin = 10.0;
 
 - (void)commonInit{
     self.cardView = [UIView new];
+    [self.cardView.layer setShadowOffset:CGSizeMake(1, 1)];
+    [self.cardView.layer setShadowOpacity:0.3];
+    [self.cardView.layer setShadowRadius:1];
     [self addSubview:self.cardView];
     
     self.iconImageView = [UIImageView new];
@@ -74,6 +77,7 @@ const CGFloat kCardWidthMargin = 10.0;
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.cardView.frame = CGRectMake(kCardWidthMargin, kCardHeightMargin, self.bounds.size.width - kCardWidthMargin *2 , self.bounds.size.height - kCardHeightMargin * 2);
+    [self.cardView.layer setShadowPath:[UIBezierPath bezierPathWithRect:self.cardView.bounds].CGPath];
     self.iconImageView.frame = CGRectMake(5, (self.cardView.frame.size.height - 44)/2, 44, 44);
     
     self.nameLabel.frame = CGRectMake(CGRectGetMaxX(self.iconImageView.frame), 2, 200, 22);

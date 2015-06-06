@@ -7,11 +7,17 @@
 //
 
 #import "GNHotelDetailViewController.h"
+#import "GNApiMnager.h"
 
-@interface GNHotelDetailViewController ()
+@interface GNHotelDetailViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong)GNHotel *hotel;
-
+@property (nonatomic, strong)UIScrollView *scrollView;
+@property (nonatomic, strong)UIImageView *imageView;
+@property (nonatomic, strong)UILabel *nameLabel;
+@property (nonatomic, strong)UILabel *addressLabel;
+@property (nonatomic, strong)UILabel *priceLabel;
+@property (nonatomic, strong)UILabel *checkLabel;
 
 @end
 
@@ -30,23 +36,46 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width)];
-    [self.view addSubview:imageView];
-    UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, CGRectGetMaxY(imageView.frame), 300, 100)];
-    nameLabel.text = self.hotel.name;
-    nameLabel.font = [UIFont boldSystemFontOfSize:15];
-    [nameLabel sizeToFit];
-    [self.view addSubview:nameLabel];
+    _scrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
+    _scrollView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:_scrollView];
     
-    UILabel *addressLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, CGRectGetMaxY(nameLabel.frame), 300, 100)];
-    addressLabel.font = [UIFont systemFontOfSize:13];
-    addressLabel.text = self.hotel.address;
-    [self.view addSubview:addressLabel];
-                                                            
+    _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width)];
+    [self.view addSubview:_imageView];
+    _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, CGRectGetMaxY(_imageView.frame), 300, 100)];
+//    _nameLabel.text = self.hotel.name;
+    _nameLabel.font = [UIFont boldSystemFontOfSize:15];
+    [_nameLabel sizeToFit];
+    [self.view addSubview:_nameLabel];
     
+    _addressLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, CGRectGetMaxY(_nameLabel.frame), 300, 100)];
+    _addressLabel.font = [UIFont systemFontOfSize:13];
+//    _addressLabel.text = self.hotel.address;
+    [self.view addSubview:_addressLabel];
     
+
+    
+    [self callApi];
     
     // Do any additional setup after loading the view.
+}
+
+
+- (void)callApi{
+    [SVProgressHUD show];
+    __weak typeof(self) weakself = self;
+    [[GNApiMnager sharedManager] getRequest:self.hotel.detailURL params:nil success:^(id responseObject) {
+        [SVProgressHUD dismiss];
+        DLog(@"%@",responseObject);
+        [weakself setDetail:responseObject];
+        
+        } failure:^(NSError *error) {
+            [SVProgressHUD dismiss];
+    }];
+}
+
+- (void)setDetail:(NSDictionary *)dictionary{
+    
 }
 
 

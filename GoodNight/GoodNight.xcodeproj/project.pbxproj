@@ -15,14 +15,21 @@
 		F375DBB01B22DDF0001DBE58 /* GoodNightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F375DBAF1B22DDF0001DBE58 /* GoodNightTests.m */; };
 		F3A9B1BF1B22E7E500C13081 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1BE1B22E7E500C13081 /* AppDelegate.m */; };
 		F3A9B1C21B22E80B00C13081 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1C11B22E80B00C13081 /* ViewController.m */; };
-		F3A9B1C51B22E87000C13081 /* GDApiMnager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1C41B22E87000C13081 /* GDApiMnager.m */; };
+		F3A9B1C51B22E87000C13081 /* GNApiMnager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1C41B22E87000C13081 /* GNApiMnager.m */; };
 		F3A9B1CC1B22EC2A00C13081 /* AppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1CB1B22EC2A00C13081 /* AppViewController.m */; };
 		F3A9B1CF1B22EEB800C13081 /* GNHotelListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1CE1B22EEB800C13081 /* GNHotelListViewController.m */; };
 		F3A9B1D21B22EEE600C13081 /* GNHotelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1D11B22EEE600C13081 /* GNHotelCell.m */; };
 		F3A9B1D81B22F05500C13081 /* GNSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1D71B22F05500C13081 /* GNSegmentViewController.m */; };
-		F3A9B1DB1B22F08E00C13081 /* GNMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1DA1B22F08E00C13081 /* GNMenuViewController.m */; };
 		F3A9B1DE1B22F2A900C13081 /* GNHotel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1DD1B22F2A900C13081 /* GNHotel.m */; };
 		F3A9B1E11B22F9CD00C13081 /* GNMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1E01B22F9CD00C13081 /* GNMapViewController.m */; };
+		F3A9B1E41B22FCC300C13081 /* GNSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1E31B22FCC300C13081 /* GNSegmentView.m */; };
+		F3A9B1E71B23011D00C13081 /* GNMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1E61B23011D00C13081 /* GNMenuViewController.m */; };
+		F3A9B1EA1B23058300C13081 /* GNProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1E91B23058300C13081 /* GNProfileViewController.m */; };
+		F3A9B1ED1B230E5100C13081 /* GNSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1EC1B230E5100C13081 /* GNSideMenuViewController.m */; };
+		F3A9B1F01B232E0900C13081 /* GNHotelDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1EF1B232E0900C13081 /* GNHotelDetailViewController.m */; };
+		F3A9B1F91B234BE300C13081 /* GNWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1F81B234BE300C13081 /* GNWebViewController.m */; };
+		F3A9B1FC1B234C2200C13081 /* GNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1FB1B234C2200C13081 /* GNLoginViewController.m */; };
+		F3A9B1FF1B235D5200C13081 /* GNWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1FE1B235D5200C13081 /* GNWaitingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +59,8 @@
 		F3A9B1BE1B22E7E500C13081 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
 		F3A9B1C01B22E80B00C13081 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Classes/ViewControllers/ViewController.h; sourceTree = "<group>"; };
 		F3A9B1C11B22E80B00C13081 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Classes/ViewControllers/ViewController.m; sourceTree = "<group>"; };
-		F3A9B1C31B22E87000C13081 /* GDApiMnager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDApiMnager.h; path = Classes/Models/GDApiMnager.h; sourceTree = "<group>"; };
-		F3A9B1C41B22E87000C13081 /* GDApiMnager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDApiMnager.m; path = Classes/Models/GDApiMnager.m; sourceTree = "<group>"; };
+		F3A9B1C31B22E87000C13081 /* GNApiMnager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNApiMnager.h; path = Classes/Models/GNApiMnager.h; sourceTree = "<group>"; };
+		F3A9B1C41B22E87000C13081 /* GNApiMnager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNApiMnager.m; path = Classes/Models/GNApiMnager.m; sourceTree = "<group>"; };
 		F3A9B1C71B22EADA00C13081 /* GoodNightPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodNightPrefixHeader.pch; sourceTree = "<group>"; };
 		F3A9B1C91B22EBC300C13081 /* GNConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GNConfig.h; path = Classes/Config/GNConfig.h; sourceTree = "<group>"; };
 		F3A9B1CA1B22EC2A00C13081 /* AppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppViewController.h; path = Classes/ViewControllers/AppViewController.h; sourceTree = "<group>"; };
@@ -64,12 +71,26 @@
 		F3A9B1D11B22EEE600C13081 /* GNHotelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNHotelCell.m; path = Classes/Views/GNHotelCell.m; sourceTree = "<group>"; };
 		F3A9B1D61B22F05500C13081 /* GNSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNSegmentViewController.h; path = Classes/ViewControllers/GNSegmentViewController.h; sourceTree = "<group>"; };
 		F3A9B1D71B22F05500C13081 /* GNSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNSegmentViewController.m; path = Classes/ViewControllers/GNSegmentViewController.m; sourceTree = "<group>"; };
-		F3A9B1D91B22F08E00C13081 /* GNMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNMenuViewController.h; path = Classes/ViewControllers/GNMenuViewController.h; sourceTree = "<group>"; };
-		F3A9B1DA1B22F08E00C13081 /* GNMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNMenuViewController.m; path = Classes/ViewControllers/GNMenuViewController.m; sourceTree = "<group>"; };
 		F3A9B1DC1B22F2A900C13081 /* GNHotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNHotel.h; path = Classes/Models/GNHotel.h; sourceTree = "<group>"; };
 		F3A9B1DD1B22F2A900C13081 /* GNHotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNHotel.m; path = Classes/Models/GNHotel.m; sourceTree = "<group>"; };
 		F3A9B1DF1B22F9CD00C13081 /* GNMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNMapViewController.h; path = Classes/ViewControllers/GNMapViewController.h; sourceTree = "<group>"; };
 		F3A9B1E01B22F9CD00C13081 /* GNMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNMapViewController.m; path = Classes/ViewControllers/GNMapViewController.m; sourceTree = "<group>"; };
+		F3A9B1E21B22FCC300C13081 /* GNSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNSegmentView.h; path = Classes/Views/GNSegmentView.h; sourceTree = "<group>"; };
+		F3A9B1E31B22FCC300C13081 /* GNSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNSegmentView.m; path = Classes/Views/GNSegmentView.m; sourceTree = "<group>"; };
+		F3A9B1E51B23011D00C13081 /* GNMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNMenuViewController.h; path = Classes/ViewControllers/GNMenuViewController.h; sourceTree = "<group>"; };
+		F3A9B1E61B23011D00C13081 /* GNMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNMenuViewController.m; path = Classes/ViewControllers/GNMenuViewController.m; sourceTree = "<group>"; };
+		F3A9B1E81B23058300C13081 /* GNProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNProfileViewController.h; path = Classes/ViewControllers/GNProfileViewController.h; sourceTree = "<group>"; };
+		F3A9B1E91B23058300C13081 /* GNProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNProfileViewController.m; path = Classes/ViewControllers/GNProfileViewController.m; sourceTree = "<group>"; };
+		F3A9B1EB1B230E5100C13081 /* GNSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNSideMenuViewController.h; path = Classes/ViewControllers/GNSideMenuViewController.h; sourceTree = "<group>"; };
+		F3A9B1EC1B230E5100C13081 /* GNSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNSideMenuViewController.m; path = Classes/ViewControllers/GNSideMenuViewController.m; sourceTree = "<group>"; };
+		F3A9B1EE1B232E0900C13081 /* GNHotelDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNHotelDetailViewController.h; path = Classes/ViewControllers/GNHotelDetailViewController.h; sourceTree = "<group>"; };
+		F3A9B1EF1B232E0900C13081 /* GNHotelDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNHotelDetailViewController.m; path = Classes/ViewControllers/GNHotelDetailViewController.m; sourceTree = "<group>"; };
+		F3A9B1F71B234BE300C13081 /* GNWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNWebViewController.h; path = Classes/ViewControllers/GNWebViewController.h; sourceTree = "<group>"; };
+		F3A9B1F81B234BE300C13081 /* GNWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNWebViewController.m; path = Classes/ViewControllers/GNWebViewController.m; sourceTree = "<group>"; };
+		F3A9B1FA1B234C2200C13081 /* GNLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNLoginViewController.h; path = Classes/ViewControllers/GNLoginViewController.h; sourceTree = "<group>"; };
+		F3A9B1FB1B234C2200C13081 /* GNLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNLoginViewController.m; path = Classes/ViewControllers/GNLoginViewController.m; sourceTree = "<group>"; };
+		F3A9B1FD1B235D5200C13081 /* GNWaitingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNWaitingViewController.h; path = Classes/ViewControllers/GNWaitingViewController.h; sourceTree = "<group>"; };
+		F3A9B1FE1B235D5200C13081 /* GNWaitingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNWaitingViewController.m; path = Classes/ViewControllers/GNWaitingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +164,7 @@
 		F375DB931B22DDF0001DBE58 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F3A9B1F41B2345EF00C13081 /* images */,
 				F375DB941B22DDF0001DBE58 /* Info.plist */,
 				F375DB951B22DDF0001DBE58 /* main.m */,
 				F3A9B1C71B22EADA00C13081 /* GoodNightPrefixHeader.pch */,
@@ -189,12 +211,26 @@
 				F3A9B1CB1B22EC2A00C13081 /* AppViewController.m */,
 				F3A9B1D61B22F05500C13081 /* GNSegmentViewController.h */,
 				F3A9B1D71B22F05500C13081 /* GNSegmentViewController.m */,
-				F3A9B1D91B22F08E00C13081 /* GNMenuViewController.h */,
-				F3A9B1DA1B22F08E00C13081 /* GNMenuViewController.m */,
+				F3A9B1E21B22FCC300C13081 /* GNSegmentView.h */,
+				F3A9B1E31B22FCC300C13081 /* GNSegmentView.m */,
 				F3A9B1CD1B22EEB800C13081 /* GNHotelListViewController.h */,
 				F3A9B1CE1B22EEB800C13081 /* GNHotelListViewController.m */,
+				F3A9B1EE1B232E0900C13081 /* GNHotelDetailViewController.h */,
+				F3A9B1EF1B232E0900C13081 /* GNHotelDetailViewController.m */,
 				F3A9B1DF1B22F9CD00C13081 /* GNMapViewController.h */,
 				F3A9B1E01B22F9CD00C13081 /* GNMapViewController.m */,
+				F3A9B1E51B23011D00C13081 /* GNMenuViewController.h */,
+				F3A9B1E61B23011D00C13081 /* GNMenuViewController.m */,
+				F3A9B1E81B23058300C13081 /* GNProfileViewController.h */,
+				F3A9B1E91B23058300C13081 /* GNProfileViewController.m */,
+				F3A9B1EB1B230E5100C13081 /* GNSideMenuViewController.h */,
+				F3A9B1EC1B230E5100C13081 /* GNSideMenuViewController.m */,
+				F3A9B1F71B234BE300C13081 /* GNWebViewController.h */,
+				F3A9B1F81B234BE300C13081 /* GNWebViewController.m */,
+				F3A9B1FA1B234C2200C13081 /* GNLoginViewController.h */,
+				F3A9B1FB1B234C2200C13081 /* GNLoginViewController.m */,
+				F3A9B1FD1B235D5200C13081 /* GNWaitingViewController.h */,
+				F3A9B1FE1B235D5200C13081 /* GNWaitingViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -211,8 +247,8 @@
 		F3A9B1BC1B22E76E00C13081 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F3A9B1C31B22E87000C13081 /* GDApiMnager.h */,
-				F3A9B1C41B22E87000C13081 /* GDApiMnager.m */,
+				F3A9B1C31B22E87000C13081 /* GNApiMnager.h */,
+				F3A9B1C41B22E87000C13081 /* GNApiMnager.m */,
 				F3A9B1DC1B22F2A900C13081 /* GNHotel.h */,
 				F3A9B1DD1B22F2A900C13081 /* GNHotel.m */,
 			);
@@ -225,6 +261,13 @@
 				F3A9B1C91B22EBC300C13081 /* GNConfig.h */,
 			);
 			name = Config;
+			sourceTree = "<group>";
+		};
+		F3A9B1F41B2345EF00C13081 /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,16 +406,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3A9B1E11B22F9CD00C13081 /* GNMapViewController.m in Sources */,
-				F3A9B1DB1B22F08E00C13081 /* GNMenuViewController.m in Sources */,
 				F3A9B1D21B22EEE600C13081 /* GNHotelCell.m in Sources */,
+				F3A9B1EA1B23058300C13081 /* GNProfileViewController.m in Sources */,
 				F3A9B1CC1B22EC2A00C13081 /* AppViewController.m in Sources */,
+				F3A9B1F91B234BE300C13081 /* GNWebViewController.m in Sources */,
 				F3A9B1C21B22E80B00C13081 /* ViewController.m in Sources */,
 				F3A9B1D81B22F05500C13081 /* GNSegmentViewController.m in Sources */,
 				F3A9B1BF1B22E7E500C13081 /* AppDelegate.m in Sources */,
+				F3A9B1E71B23011D00C13081 /* GNMenuViewController.m in Sources */,
 				F375DB961B22DDF0001DBE58 /* main.m in Sources */,
 				F3A9B1CF1B22EEB800C13081 /* GNHotelListViewController.m in Sources */,
-				F3A9B1C51B22E87000C13081 /* GDApiMnager.m in Sources */,
+				F3A9B1E41B22FCC300C13081 /* GNSegmentView.m in Sources */,
+				F3A9B1ED1B230E5100C13081 /* GNSideMenuViewController.m in Sources */,
+				F3A9B1F01B232E0900C13081 /* GNHotelDetailViewController.m in Sources */,
+				F3A9B1C51B22E87000C13081 /* GNApiMnager.m in Sources */,
+				F3A9B1FF1B235D5200C13081 /* GNWaitingViewController.m in Sources */,
 				F3A9B1DE1B22F2A900C13081 /* GNHotel.m in Sources */,
+				F3A9B1FC1B234C2200C13081 /* GNLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,5 +14,10 @@
 
 
 #import "GNConfig.h"
+#import "GNSideMenuViewController.h"
+#import "GNSegmentViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+
 
 #endif

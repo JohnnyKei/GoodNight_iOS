@@ -10,4 +10,29 @@
 
 @interface GNSideMenuViewController : UIViewController
 
+- (instancetype)initWithMenuViewController:(UIViewController *)menuViewController contentViewController:(UIViewController *)contentViewController;
+
+- (void)closeMenu;
+
+- (void)openMenu;
+
+- (void)toggleMenu;
+
+- (void)disable;
+
+- (void)enable;
+
+
+- (void)changeContentViewController:(UIViewController *)contentViewController closeMenu:(BOOL)closeMenu;
+
+
+@property (nonatomic, assign) CGRect menuFrame;
+
+
+@end
+
+
+
+@interface UIViewController (GNSideMenuViewController)
+- (GNSideMenuViewController *)sideMenuController;
 @end

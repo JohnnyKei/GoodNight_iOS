@@ -10,4 +10,9 @@
 
 @interface GNMenuViewController : UIViewController
 
+- (instancetype)initWithViewControllers:(NSArray *)viewControllers titles:(NSArray *)titles;
+
+@property (nonatomic, copy)NSArray *viewControllers;
+@property (nonatomic, copy)NSArray *titles;
+
 @end

@@ -7,8 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import "GNMenuViewController.h"
+#import "GNSegmentViewController.h"
+#import "GNHotelListViewController.h"
+#import "GNMapViewController.h"
+#import "GNMenuViewController.h"
+#import "GNProfileViewController.h"
+#import "GNSideMenuViewController.h"
 
 @interface AppDelegate ()
+
 
 @end
 
@@ -17,6 +26,41 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [GMSServices provideAPIKey:GOOGLE_MAPS_KEY];
+    
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    GNHotelListViewController *hotelVC = [[GNHotelListViewController alloc]init];
+    GNMapViewController *mapVC = [[GNMapViewController alloc]init];
+    GNSegmentViewController *segmentVC = [[GNSegmentViewController alloc]initWithViewControllers:@[hotelVC, mapVC] titles:@[@"HOTEL",@"MAP"] barHeight:120];
+    segmentVC.barBackgroundColor = RGBA(19, 18, 36, 1);
+    segmentVC.titleColor = [UIColor whiteColor];
+    segmentVC.selectedTitleColor = [UIColor whiteColor];
+    segmentVC.indicatiorColor = [UIColor whiteColor];
+    segmentVC.automaticallyAdjustsScrollViewInsets = NO;
+    
+   
+    GNProfileViewController *profileVC = [[GNProfileViewController alloc]init];
+    
+    GNMenuViewController *menuVC = [[GNMenuViewController alloc]initWithViewControllers:@[segmentVC, profileVC] titles:@[@"Home",@"Profile"]];
+    
+//    GNLoginViewController *loginVC = [[GNLoginViewController alloc]init];
+
+    GNSideMenuViewController *sideMenuVC = [[GNSideMenuViewController alloc]initWithMenuViewController:menuVC contentViewController:segmentVC];
+    
+//    sideMenuVC.menuFrame = CGRectMake(0, 0, 200, self.window.bounds.size.height);
+    
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:sideMenuVC];
+    [nav setNavigationBarHidden:YES];
+    
+    self.window.rootViewController = nav;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

@@ -12,4 +12,11 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
+
+@property (nonatomic, strong, readonly)NSString *name;
+@property (nonatomic, assign, readonly)CGFloat latitude;
+@property (nonatomic, assign, readonly)CGFloat longitude;
+@property (nonatomic, strong, readonly)NSString *address;
+@property (nonatomic, strong, readonly)NSString *detailURL;
+
 @end

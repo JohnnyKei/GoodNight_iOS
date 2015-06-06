@@ -6,17 +6,17 @@
 //  Copyright (c) 2015年 KeiSato. All rights reserved.
 //
 
-#import "GDApiMnager.h"
+#import "GNApiMnager.h"
 #import <AFNetworking/AFNetworking.h>
 
-static GDApiMnager *_manager = nil;
+static GNApiMnager *_manager = nil;
 
-@implementation GDApiMnager
+@implementation GNApiMnager
 
 + (instancetype)sharedManager{
     @synchronized(self){
         if (!_manager) {
-            _manager = [[GDApiMnager alloc]init];
+            _manager = [[GNApiMnager alloc]init];
         }
     }
     return _manager;
@@ -34,6 +34,7 @@ static GDApiMnager *_manager = nil;
 
 - (void)getRequest:(NSString *)urlString params:(NSDictionary *)params success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager GET:urlString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) success(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

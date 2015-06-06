@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GDApiMnager : NSObject
+@interface GNApiMnager : NSObject
 
 + (instancetype)sharedManager;
 - (void)getRequest:(NSString *)urlString params:(NSDictionary *)params success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;

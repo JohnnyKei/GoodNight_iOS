@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GNHotel.h"
 
 @interface GNHotelCell : UITableViewCell
+
+
+@property (nonatomic, strong)UIColor *cardColor;
+@property (nonatomic, strong)GNHotel *hotel;
 
 @end

@@ -8,12 +8,26 @@
 
 #import "GNHotel.h"
 
+@interface GNHotel ()
+
+@property (nonatomic, strong, readwrite)NSString *name;
+@property (nonatomic, assign, readwrite)CGFloat latitude;
+@property (nonatomic, assign, readwrite)CGFloat longitude;
+@property (nonatomic, strong, readwrite)NSString *address;
+@property (nonatomic, strong, readwrite)NSString *detailURL;
+
+@end
+
 @implementation GNHotel
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary{
     self = [super init];
     if (self) {
-        
+        self.name = dictionary[@"name"];
+        self.latitude = [dictionary[@"latitude"] floatValue];
+        self.longitude = [dictionary[@"longitude"] floatValue];
+        self.address = dictionary[@"address"];
+        self.detailURL = dictionary[@"url"];
     }
     return self;
 }

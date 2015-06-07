@@ -12,5 +12,8 @@
 
 + (instancetype)sharedManager;
 - (void)getRequest:(NSString *)urlString params:(NSDictionary *)params success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
-- (void)postRequest:(NSString *)urlString params:(NSDictionary *)params uccess:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
+- (void)postRequest:(NSString *)urlString params:(NSDictionary *)params success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
+
+- (void)getHTTPRequest:(NSString *)urlString params:(NSDictionary *)params success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
 @end
+

@@ -57,7 +57,7 @@
     _segmentView.delegate = self;
     _segmentView.title = @"GoodNight";
     [_segmentView setBarBackgroundImage:[UIImage imageNamed:@"uber_image2"]];
-    
+    [_segmentView setBackgroundImages:@[[UIImage imageNamed:@"uber_image2"],[UIImage imageNamed:@"uber_image3"]]];
     [self.view addSubview:_segmentView];
     
     _contentScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,  CGRectGetMaxY(_segmentView.frame), self.view.bounds.size.width, self.view.bounds.size.height - CGRectGetMaxY(_segmentView.bounds))];

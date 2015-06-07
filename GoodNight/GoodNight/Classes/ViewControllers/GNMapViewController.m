@@ -11,8 +11,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import "GNApiMnager.h"
 #import "GNHotel.h"
-
-@interface GNMapViewController ()<CLLocationManagerDelegate>
+#import "GNHotelDetailViewController.h"
+@interface GNMapViewController ()<CLLocationManagerDelegate, GMSMapViewDelegate>
 
 @property (nonatomic, strong)GMSMapView *mapView;
 
@@ -34,6 +34,7 @@
                                                                  zoom:14];
     _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     _mapView.myLocationEnabled = YES;
+    _mapView.delegate = self;
     self.view = _mapView;
     self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     self.view.autoresizesSubviews = YES;
@@ -182,9 +183,16 @@
         GMSMarker *marker = [[GMSMarker alloc] init];
         marker.position = CLLocationCoordinate2DMake(hotel.latitude, hotel.longitude);
         marker.title = hotel.name;
+        marker.userData = hotel;
         marker.map = _mapView;
     }
 }
 
+
+
+- (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker{
+    GNHotel *selectedHotel = (GNHotel *)marker.userData;
+    GNHotelDetailViewController *hotelDetailVC = [[GNHotelDetailViewController alloc]initWithHotel:selectedHotel];
+    [[self segmentViewController].navigationController pushViewController:hotelDetailVC animated:YES];}
 
 @end

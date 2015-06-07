@@ -42,7 +42,22 @@ static GNApiMnager *_manager = nil;
     }];
 }
 
-- (void)postRequest:(NSString *)urlString params:(NSDictionary *)params uccess:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure{
+
+- (void)getHTTPRequest:(NSString *)urlString params:(NSDictionary *)params success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSString *accessToken = [ud objectForKey:UBER_ACCESS_TOKEN];
+    [manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@",accessToken] forHTTPHeaderField:@"Authorization"];
+
+    [manager GET:urlString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (success) success(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (failure) failure(error);
+    }];
+}
+
+- (void)postRequest:(NSString *)urlString params:(NSDictionary *)params success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager POST:urlString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) success(responseObject);

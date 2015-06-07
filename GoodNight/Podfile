@@ -4,3 +4,5 @@ pod 'GoogleMaps'
 pod "AFNetworking", "~> 2.0"
 pod "SVProgressHUD"
 pod 'SDWebImage', '~>3.7'
+pod 'NXOAuth2Client', '~> 1.2'
+pod 'gtm-oauth2', '~> 1.0'

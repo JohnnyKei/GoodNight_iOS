@@ -7,7 +7,11 @@
 //
 
 #import "AppViewController.h"
+#import "GNDetailHotel.h"
 
 @interface GNWaitingViewController : AppViewController
+
+- (instancetype)initWithDetailHotel:(GNDetailHotel *)detailHotel;
+
 
 @end

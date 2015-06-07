@@ -28,6 +28,7 @@
 @property (nonatomic, strong)UIImage *barBackgroundImage;
 @property (nonatomic, strong)NSString *title;
 @property (nonatomic)NSInteger currentIndex;
+@property (nonatomic, strong)NSArray *backgroundImages;
 
 
 - (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles;

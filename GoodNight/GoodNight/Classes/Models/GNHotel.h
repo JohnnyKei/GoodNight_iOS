@@ -16,7 +16,8 @@
 @property (nonatomic, strong, readonly)NSString *name;
 @property (nonatomic, assign, readonly)CGFloat latitude;
 @property (nonatomic, assign, readonly)CGFloat longitude;
-@property (nonatomic, strong, readonly)NSString *address;
 @property (nonatomic, strong, readonly)NSString *detailURL;
+@property (nonatomic, strong, readonly)NSString *areaName;
+@property (nonatomic, strong, readonly)NSString *thumbnail;
 
 @end

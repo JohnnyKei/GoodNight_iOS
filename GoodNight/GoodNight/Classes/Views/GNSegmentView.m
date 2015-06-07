@@ -130,6 +130,7 @@ const CGFloat kIndicatorHeight = 2.0;
 }
 
 
+
 - (void)setTitle:(NSString *)title{
     _title = title;
     self.titleLabel.text = title;
@@ -142,6 +143,9 @@ const CGFloat kIndicatorHeight = 2.0;
     
     if (self.delegate != nil && [self.delegate respondsToSelector:@selector(segmentView:didSelectedTitleAtIndex:)]) {
         [self.delegate segmentView:self didSelectedTitleAtIndex:sender.tag];
+        if (self.backgroundImages) {
+            self.barBackgroundImage = self.backgroundImages[sender.tag];
+        }
     }
     
 }

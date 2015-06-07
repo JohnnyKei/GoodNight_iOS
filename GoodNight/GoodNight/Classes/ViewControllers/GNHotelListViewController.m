@@ -50,14 +50,26 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    if (self.loginShow == NO) {
-//        GNLoginViewController *loginVC = [[GNLoginViewController alloc]init];
-//        [self.segmentViewController presentViewController:loginVC animated:NO completion:^{
-//            self.loginShow = YES;
-//        }];
-//    }
+
+    
+    NSUserDefaults *ud =  [NSUserDefaults standardUserDefaults];
+    if ([ud objectForKey:UBER_ACCESS_TOKEN]) {
+//        [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        GNLoginViewController *loginVC = [[GNLoginViewController alloc]init];
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:loginVC];
+        [self.segmentViewController presentViewController:nav animated:NO completion:^{
+            self.loginShow = YES;
+        }];
+    }
 
  
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [SVProgressHUD dismiss];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -13,7 +13,7 @@
 @property (nonatomic, strong)UIImageView *iconImageView;
 @property (nonatomic, strong)UIView *cardView;
 @property (nonatomic, strong)UILabel *nameLabel;
-@property (nonatomic, strong)UILabel *addressLabel;
+@property (nonatomic, strong)UILabel *areaLabel;
 
 @end
 
@@ -60,6 +60,9 @@ const CGFloat kCardWidthMargin = 6.0;
     [self addSubview:self.cardView];
     
     self.iconImageView = [UIImageView new];
+//    self.iconImageView.backgroundColor = [UIColor blackColor];
+    self.iconImageView.layer.borderColor = [UIColor blackColor].CGColor;
+    self.iconImageView.layer.borderWidth = 1;
     [self.cardView addSubview:self.iconImageView];
     
     self.nameLabel = [UILabel new];
@@ -67,10 +70,10 @@ const CGFloat kCardWidthMargin = 6.0;
     self.nameLabel.font = [UIFont boldSystemFontOfSize:14];
     [self.cardView addSubview:self.nameLabel];
     
-    self.addressLabel= [UILabel new];
-    self.addressLabel.numberOfLines = 0;
-    self.addressLabel.font = [UIFont systemFontOfSize:12];
-    [self.cardView addSubview:self.addressLabel];
+    self.areaLabel= [UILabel new];
+    self.areaLabel.numberOfLines = 0;
+    self.areaLabel.font = [UIFont systemFontOfSize:12];
+    [self.cardView addSubview:self.areaLabel];
 }
 
 
@@ -80,8 +83,8 @@ const CGFloat kCardWidthMargin = 6.0;
     [self.cardView.layer setShadowPath:[UIBezierPath bezierPathWithRect:self.cardView.bounds].CGPath];
     self.iconImageView.frame = CGRectMake(5, (self.cardView.frame.size.height - 44)/2, 44, 44);
     
-    self.nameLabel.frame = CGRectMake(CGRectGetMaxX(self.iconImageView.frame), 2, 200, 22);
-    self.addressLabel.frame = CGRectMake(CGRectGetMaxX(self.iconImageView.frame), 2 + 22 +2, 200, 22);
+    self.nameLabel.frame = CGRectMake(CGRectGetMaxX(self.iconImageView.frame) + 10, 2, 200, 22);
+    self.areaLabel.frame = CGRectMake(CGRectGetMaxX(self.iconImageView.frame) + 10, 2 + 22 +2, 200, 22);
     
 }
 
@@ -89,7 +92,8 @@ const CGFloat kCardWidthMargin = 6.0;
 - (void)setHotel:(GNHotel *)hotel{
     _hotel = hotel;
     self.nameLabel.text = hotel.name;
-    self.addressLabel.text = hotel.address;
+    self.areaLabel.text = hotel.areaName;
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:hotel.thumbnail] placeholderImage:[UIImage imageNamed:@"no_image"]];
 }
 
 - (void)setCardColor:(UIColor *)cardColor{

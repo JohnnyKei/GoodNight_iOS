@@ -31,6 +31,11 @@
 		F3A9B1FC1B234C2200C13081 /* GNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1FB1B234C2200C13081 /* GNLoginViewController.m */; };
 		F3A9B1FF1B235D5200C13081 /* GNWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B1FE1B235D5200C13081 /* GNWaitingViewController.m */; };
 		F3A9B20B1B2384F700C13081 /* GNDetailHotel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B20A1B2384F700C13081 /* GNDetailHotel.m */; };
+		F3A9B20E1B23CF4C00C13081 /* GNHotelDescrptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B20D1B23CF4C00C13081 /* GNHotelDescrptionCell.m */; };
+		F3A9B2111B23CF7000C13081 /* GNHotelAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B2101B23CF7000C13081 /* GNHotelAddressCell.m */; };
+		F3A9B2141B23CFA000C13081 /* GNHotelPhoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B2131B23CFA000C13081 /* GNHotelPhoneCell.m */; };
+		F3A9B2171B23CFBC00C13081 /* GNHotelCheckCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B2161B23CFBC00C13081 /* GNHotelCheckCell.m */; };
+		F3A9B21A1B23CFF100C13081 /* GNHotelFacilitiesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9B2191B23CFF100C13081 /* GNHotelFacilitiesCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +99,16 @@
 		F3A9B1FE1B235D5200C13081 /* GNWaitingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNWaitingViewController.m; path = Classes/ViewControllers/GNWaitingViewController.m; sourceTree = "<group>"; };
 		F3A9B2091B2384F700C13081 /* GNDetailHotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNDetailHotel.h; path = Classes/Models/GNDetailHotel.h; sourceTree = "<group>"; };
 		F3A9B20A1B2384F700C13081 /* GNDetailHotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNDetailHotel.m; path = Classes/Models/GNDetailHotel.m; sourceTree = "<group>"; };
+		F3A9B20C1B23CF4C00C13081 /* GNHotelDescrptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNHotelDescrptionCell.h; path = Classes/Views/GNHotelDescrptionCell.h; sourceTree = "<group>"; };
+		F3A9B20D1B23CF4C00C13081 /* GNHotelDescrptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNHotelDescrptionCell.m; path = Classes/Views/GNHotelDescrptionCell.m; sourceTree = "<group>"; };
+		F3A9B20F1B23CF7000C13081 /* GNHotelAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNHotelAddressCell.h; path = Classes/Views/GNHotelAddressCell.h; sourceTree = "<group>"; };
+		F3A9B2101B23CF7000C13081 /* GNHotelAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNHotelAddressCell.m; path = Classes/Views/GNHotelAddressCell.m; sourceTree = "<group>"; };
+		F3A9B2121B23CFA000C13081 /* GNHotelPhoneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNHotelPhoneCell.h; path = Classes/Views/GNHotelPhoneCell.h; sourceTree = "<group>"; };
+		F3A9B2131B23CFA000C13081 /* GNHotelPhoneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNHotelPhoneCell.m; path = Classes/Views/GNHotelPhoneCell.m; sourceTree = "<group>"; };
+		F3A9B2151B23CFBC00C13081 /* GNHotelCheckCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNHotelCheckCell.h; path = Classes/Views/GNHotelCheckCell.h; sourceTree = "<group>"; };
+		F3A9B2161B23CFBC00C13081 /* GNHotelCheckCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNHotelCheckCell.m; path = Classes/Views/GNHotelCheckCell.m; sourceTree = "<group>"; };
+		F3A9B2181B23CFF100C13081 /* GNHotelFacilitiesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GNHotelFacilitiesCell.h; path = Classes/Views/GNHotelFacilitiesCell.h; sourceTree = "<group>"; };
+		F3A9B2191B23CFF100C13081 /* GNHotelFacilitiesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GNHotelFacilitiesCell.m; path = Classes/Views/GNHotelFacilitiesCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +258,16 @@
 			children = (
 				F3A9B1D01B22EEE600C13081 /* GNHotelCell.h */,
 				F3A9B1D11B22EEE600C13081 /* GNHotelCell.m */,
+				F3A9B20C1B23CF4C00C13081 /* GNHotelDescrptionCell.h */,
+				F3A9B20D1B23CF4C00C13081 /* GNHotelDescrptionCell.m */,
+				F3A9B20F1B23CF7000C13081 /* GNHotelAddressCell.h */,
+				F3A9B2101B23CF7000C13081 /* GNHotelAddressCell.m */,
+				F3A9B2121B23CFA000C13081 /* GNHotelPhoneCell.h */,
+				F3A9B2131B23CFA000C13081 /* GNHotelPhoneCell.m */,
+				F3A9B2151B23CFBC00C13081 /* GNHotelCheckCell.h */,
+				F3A9B2161B23CFBC00C13081 /* GNHotelCheckCell.m */,
+				F3A9B2181B23CFF100C13081 /* GNHotelFacilitiesCell.h */,
+				F3A9B2191B23CFF100C13081 /* GNHotelFacilitiesCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -416,19 +441,24 @@
 				F3A9B1CC1B22EC2A00C13081 /* AppViewController.m in Sources */,
 				F3A9B1F91B234BE300C13081 /* GNWebViewController.m in Sources */,
 				F3A9B1C21B22E80B00C13081 /* ViewController.m in Sources */,
+				F3A9B2141B23CFA000C13081 /* GNHotelPhoneCell.m in Sources */,
 				F3A9B1D81B22F05500C13081 /* GNSegmentViewController.m in Sources */,
+				F3A9B2171B23CFBC00C13081 /* GNHotelCheckCell.m in Sources */,
 				F3A9B1BF1B22E7E500C13081 /* AppDelegate.m in Sources */,
 				F3A9B20B1B2384F700C13081 /* GNDetailHotel.m in Sources */,
 				F3A9B1E71B23011D00C13081 /* GNMenuViewController.m in Sources */,
+				F3A9B20E1B23CF4C00C13081 /* GNHotelDescrptionCell.m in Sources */,
 				F375DB961B22DDF0001DBE58 /* main.m in Sources */,
 				F3A9B1CF1B22EEB800C13081 /* GNHotelListViewController.m in Sources */,
 				F3A9B1E41B22FCC300C13081 /* GNSegmentView.m in Sources */,
+				F3A9B21A1B23CFF100C13081 /* GNHotelFacilitiesCell.m in Sources */,
 				F3A9B1ED1B230E5100C13081 /* GNSideMenuViewController.m in Sources */,
 				F3A9B1F01B232E0900C13081 /* GNHotelDetailViewController.m in Sources */,
 				F3A9B1C51B22E87000C13081 /* GNApiMnager.m in Sources */,
 				F3A9B1FF1B235D5200C13081 /* GNWaitingViewController.m in Sources */,
 				F3A9B1DE1B22F2A900C13081 /* GNHotel.m in Sources */,
 				F3A9B1FC1B234C2200C13081 /* GNLoginViewController.m in Sources */,
+				F3A9B2111B23CF7000C13081 /* GNHotelAddressCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

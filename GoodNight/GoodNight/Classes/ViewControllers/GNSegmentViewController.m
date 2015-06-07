@@ -90,30 +90,14 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"ic_menu_black"] style:UIBarButtonItemStylePlain target:self action:@selector(menuTapped:)];
-//    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     
 }
 
-- (void)menuTapped:(UINavigationItem *)sender{
-}
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
 }
-
-- (void)dealloc{
-    [[NSNotificationCenter defaultCenter]removeObserver:self];
-}
-
-- (BOOL)canBecomeFirstResponder{
-    
-    return YES;
-}
-
-
-
 
 
 

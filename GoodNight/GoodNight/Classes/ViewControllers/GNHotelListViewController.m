@@ -30,7 +30,7 @@
     _tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _tableView.backgroundColor = RGBA(19, 18, 36, 1);
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
     [_tableView registerClass:[GNHotelCell class] forCellReuseIdentifier:@"Cell"];
@@ -41,8 +41,6 @@
     
     [self callApi];
     
-    
-    self.loginShow = NO;
     
     // Do any additional setup after loading the view.
 }

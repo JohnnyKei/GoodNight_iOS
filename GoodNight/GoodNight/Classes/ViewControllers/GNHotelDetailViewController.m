@@ -9,14 +9,9 @@
 #import "GNHotelDetailViewController.h"
 #import "GNApiMnager.h"
 #import "GNDetailHotel.h"
-#import "GNHotelAddressCell.h"
-#import "GNHotelDescrptionCell.h"
-#import "GNHotelCheckCell.h"
-#import "GNHotelFacilitiesCell.h"
-#import "GNHotelPhoneCell.h"
 #import "GNWaitingViewController.h"
 
-@interface GNHotelDetailViewController ()<UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@interface GNHotelDetailViewController ()<UIScrollViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong)GNHotel *hotel;
 @property (nonatomic, strong)UIScrollView *scrollView;
@@ -144,7 +139,6 @@
     [_scrollView addSubview:_checkOutDateLabel];
     
     
-//    _tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
     
     
     [self callApi];
@@ -315,30 +309,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 6;
-}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell;
-    switch (indexPath.row) {
-        case 0:
-
-            break;
-            
-            case 1:
-            
-            
-        default:
-            break;
-    }
-    
-    
-    return cell;
-}
 
 @end

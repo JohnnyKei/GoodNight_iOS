@@ -11,8 +11,8 @@
 
 
 #define GOOGLE_MAPS_KEY @"AIzaSyBilOw8Mrbis2sfoa0Ytj72ey1s078pxbo"
-#define UBER_CLIENT_ID @"kv2PsG1lgfcJ9IWNCFuzrglOAIZ00Qdx"
-#define UBER_SECRET_KEY @"3bB_dOzwXsMoV98nn4VtLB9i0resfnfzwW7PrF7e"
+#define UBER_CLIENT_ID @"GbfmuB28FCNIPfbeMrz9Wqk1cQcPqz91"
+#define UBER_SECRET_KEY @"Obgg3JQJdJG9Rx1Xujyks42XKUj-ZiNUtuU_Ex8u"
 #define UBER_REDIRECT_URL @"https://goodnight.herokuapp.com/"
 #define UBER_ACCESS_TOKEN @"UBER_ACCESS_TOKEN"
 #define UBER_REFLESH_TOKEN @"UBER_REFLESH_TOKEN"

@@ -16,6 +16,7 @@
 @property (nonatomic)CGFloat itemWidth;
 @property (nonatomic, strong)UIImageView *imageView;
 @property (nonatomic, strong)UILabel *titleLabel;
+@property (nonatomic, strong)UIView *imageCoverView;
 @end
 
 const CGFloat kIndicatorHeight = 2.0;
@@ -30,6 +31,11 @@ const CGFloat kIndicatorHeight = 2.0;
         _imageView = [[UIImageView alloc]initWithFrame:self.bounds];
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         [self addSubview:_imageView];
+        
+        _imageCoverView = [[UIView alloc]initWithFrame:_imageView.bounds];
+        [_imageView addSubview:_imageCoverView];
+        _imageCoverView.backgroundColor = RGBA(16, 18, 36, 1);
+        _imageCoverView.alpha = 0;
         
         
         _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 60)];
@@ -106,7 +112,18 @@ const CGFloat kIndicatorHeight = 2.0;
         self.indicatorView.frame = CGRectMake(_itemWidth * _currentIndex, self.bounds.size.height - kIndicatorHeight - 5, _itemWidth, kIndicatorHeight);
     }];
     
+    if (self.backgroundImages) {
+        self.barBackgroundImage = self.backgroundImages[currentIndex];
+    }
+    self.imageCoverView.alpha = 1.0;
+
     
+    [UIView animateWithDuration:0.3 animations:^{
+        self.imageCoverView.alpha = 0.0;
+
+    } completion:^(BOOL finished) {
+     
+    }];
     
 }
 
@@ -143,9 +160,7 @@ const CGFloat kIndicatorHeight = 2.0;
     
     if (self.delegate != nil && [self.delegate respondsToSelector:@selector(segmentView:didSelectedTitleAtIndex:)]) {
         [self.delegate segmentView:self didSelectedTitleAtIndex:sender.tag];
-        if (self.backgroundImages) {
-            self.barBackgroundImage = self.backgroundImages[sender.tag];
-        }
+    
     }
     
 }

@@ -16,7 +16,7 @@
 #import "GNHotelPhoneCell.h"
 #import "GNWaitingViewController.h"
 
-@interface GNHotelDetailViewController ()<UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface GNHotelDetailViewController ()<UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong)GNHotel *hotel;
 @property (nonatomic, strong)UIScrollView *scrollView;
@@ -53,7 +53,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = RGBA(19, 18, 36, 1);
     
     _scrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
     _scrollView.backgroundColor = RGBA(19, 18, 36, 1);
@@ -61,7 +61,6 @@
 
     _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 150)];
     _imageView.contentMode = UIViewContentModeScaleToFill;
-    _imageView.backgroundColor = [UIColor blackColor];
     _imageView.userInteractionEnabled = YES;
     [_scrollView addSubview:_imageView];
     
@@ -76,6 +75,7 @@
     [_reserveButton.layer setShadowOpacity:0.7];
     [_reserveButton.layer setShadowOffset:CGSizeMake(1, 1)];
     [_reserveButton addTarget:self action:@selector(reserveButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    _reserveButton.alpha = 0;
     [_imageView addSubview:_reserveButton];
     
     _nameLabel = [[UILabel alloc]init];
@@ -173,8 +173,10 @@
 }
 
 - (void)reserveButtonTapped:(id)sender{
-    GNWaitingViewController *vc = [[GNWaitingViewController alloc]initWithDetailHotel:self.detailHotel];
-    [self.navigationController pushViewController:vc animated:YES];
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"" message:@"ホテルを予約しUberを呼びました。" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    alert.tag = 11;
+    [alert show];
 }
 
 
@@ -184,12 +186,22 @@
     [alert show];
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (alertView.tag == 11) {
+        GNWaitingViewController *vc = [[GNWaitingViewController alloc]initWithDetailHotel:self.detailHotel];
+        [self.navigationController pushViewController:vc animated:YES];
+
+    }
+}
 
 - (void)reloadData{
     [_imageView sd_setImageWithURL:[NSURL URLWithString:self.detailHotel.imageURL] placeholderImage:[UIImage imageNamed:@"no_image"]];
     
     self.nameLabel.frame = CGRectMake(5, _imageView.bounds.size.height - 30, self.view.bounds.size.width - 5 *2 - 60, 20);
     self.nameLabel.text = self.detailHotel.name;
+    
+    
+    _reserveButton.alpha = 1;
     
     CGRect originRect =CGRectMake(5, CGRectGetMaxY(_imageView.frame) + 10, self.view.bounds.size.width - 10, 300);
     self.descriptionLabel.frame = originRect;

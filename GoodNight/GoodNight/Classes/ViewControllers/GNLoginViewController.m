@@ -101,7 +101,7 @@ static NSString *const kKeychainItemName = @"Uber";
 
 - (void)showWebView{
  
-    NSString *str = [NSString stringWithFormat:@"https://login.uber.com/oauth/authorize?response_type=code&client_id=%@",UBER_CLIENT_ID];
+    NSString *str = [NSString stringWithFormat:@"https://login.uber.com/oauth/authorize?response_type=code&client_id=%@&scope=request",UBER_CLIENT_ID];
     
    GNWebViewController *loginVC = [[GNWebViewController alloc]initWithURL:str];
     [self.navigationController pushViewController:loginVC animated:YES];
